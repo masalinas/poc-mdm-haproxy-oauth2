@@ -19,19 +19,19 @@ docker compose down
 ## create two users
 We must create manually two users after keycloak start from Admin Portal UI. These are the credentials:
 
-- **Admin Credential**
-  Credentials: admin/password
-  Email: admin@oferto.io
-  Firstname: Admin
-  Lastname: Actor
-  Role Admin
+1. **Admin Credential**
+- Credentials: admin/password
+- Email: admin@oferto.io
+- Firstname: Admin
+- Lastname: Actor
+- Role Admin
 
-- **User Credential**:
-  Credentials: user/password
-  Email: user@oferto.io
-  Firstname: User
-  Lastname: Actor
-  Role: user
+2. **User Credential**:
+- Credentials: user/password
+- Email: user@oferto.io
+- Firstname: User
+- Lastname: Actor
+- Role: user
 
 ## get a valid token
 
