@@ -66,9 +66,9 @@ curl --location 'http://localhost:8088'
 
 Possible results:
 
-- **Try requuest without any token**: Missing Authorization HTTP header
-- **Try to request with expired token**: JWT has expired
-- **Try to request with a valid token**: Hello Mock
+- **Try mock request without any token**: Missing Authorization HTTP header
+- **Try mock request with expired token**: JWT has expired
+- **Try mock request with a valid token**: Hello Mock
 
 ## Notes
 
