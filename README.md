@@ -11,7 +11,7 @@ PoC to autenticate a mock service using OAuth 2
 docker compose up -d --no-deps --build
 ```
 
-## stop compose stack
+## Stop compose stack services
 ```
 docker compose down
 ```
