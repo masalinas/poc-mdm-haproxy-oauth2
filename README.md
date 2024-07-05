@@ -17,7 +17,13 @@ docker compose down
 ```
 
 ## Create two users to test
-We must create manually two users after keycloak start from Admin Portal UI. These are the credentials:
+We must create manually two users after keycloak start from Admin Portal UI. Access to Web Portal UI from:
+
+```
+http://localhost:8080
+```
+
+with credentials: admin/password
 
 1. **Admin Credential**
 - Credentials: admin/password
