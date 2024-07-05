@@ -51,7 +51,7 @@ curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token
 --data-urlencode 'password=password'
 ```
 
-## test authenticated mock service
+## Test authenticated mock service
 
 Test mock service authenticated from H2Proxy using the previous issued token 
 ```
