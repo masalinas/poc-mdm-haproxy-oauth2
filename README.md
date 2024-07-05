@@ -53,7 +53,7 @@ curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token
 
 ## Test authenticated mock service
 
-Test mock service authenticated from H2Proxy using the previous issued token 
+Test mock service authenticated from HAProxy using the previous issued token 
 ```
 curl --location 'http://localhost' \
 --header "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
