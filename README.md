@@ -30,7 +30,7 @@ with credentials: admin/password
 - Email: admin@oferto.io
 - Firstname: Admin
 - Lastname: Actor
-- Role Admin
+- Role: admin
 
 2. **User Account**:
 - Credentials: user/password
