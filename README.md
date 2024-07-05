@@ -2,11 +2,11 @@
 
 PoC to autenticate a mock service using OAuth 2
 
-- **HAProxy**: Reverse proxy service.
-- **Springboot**: Mock service.
-- **Keycloak**: IAM service.
+- **HAProxy**: Reverse proxy service version 3.0.2
+- **Springboot**: Mock service. (Springboot 3.3.1)
+- **Keycloak**: IAM service (24.0.4)
 
-## compile service and start compose stack
+## Compile service and start compose stack
 ```
 docker compose up -d --no-deps --build
 ```
@@ -16,7 +16,7 @@ docker compose up -d --no-deps --build
 docker compose down
 ```
 
-## create two users
+## Create two users to test
 We must create manually two users after keycloak start from Admin Portal UI. These are the credentials:
 
 1. **Admin Credential**
@@ -33,7 +33,7 @@ We must create manually two users after keycloak start from Admin Portal UI. The
 - Lastname: Actor
 - Role: user
 
-## get a valid token
+## Get a valid token
 
 Get a valid token from Admin Credentials:
 ```
@@ -45,11 +45,12 @@ curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token
 --data-urlencode 'password=password'
 ```
 
-## test securized mock service
+## test authenticated mock service
 
+Test mock service authenticated from H2Proxy using the previous issued token 
 ```
 curl --location 'http://localhost' \
---header "Authorization: Bearer YOUR_ACCESS_TOKEN"
+--header "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
 ```
 
 Possible results:
