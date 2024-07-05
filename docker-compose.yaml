@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  consum-mock:
+    container_name: consum-mock
+    build:
+      context: ./mock
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8088:8088"
+    networks:
+      - consum
+
+  consum-proxy:
+    container_name: consum-proxy
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - DNS_TCP_ADDR=127.0.0.11
+      - DNS_TCP_PORT=53
+    ports:
+      - "80:80"
+    privileged: true      
+    networks:
+      - consum
+    depends_on:
+      - consum-mock
+
+  consum-iam:
+    container_name: consum-iam
+    image: quay.io/keycloak/keycloak:24.0.4
+    command:
+      - "start-dev"
+      - "--import-realm"
+    environment:
+      - "KEYCLOAK_IMPORT=/opt/keycloak/data/import/realm-export.json"
+      - "KEYCLOAK_ADMIN=admin"
+      - "KEYCLOAK_ADMIN_PASSWORD=password"
+    volumes:
+      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+    ports:
+      - "8080:8080"
+    networks:
+      - consum
+
+networks:
+  consum:
+    name: consum
+    driver: bridge
+    external: true
