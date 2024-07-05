@@ -3,8 +3,8 @@
 PoC to autenticate a mock service using OAuth 2
 
 - **HAProxy**: Reverse proxy service version 3.0.2
-- **Springboot**: Mock service. (Springboot 3.3.1)
-- **Keycloak**: IAM service (24.0.4)
+- **Springboot**: Mock Springboot service version 3.3.1
+- **Keycloak**: IAM service version 24.0.4
 
 ## Compile service and start compose stack
 ```
