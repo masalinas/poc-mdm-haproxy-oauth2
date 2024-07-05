@@ -17,7 +17,7 @@ docker compose down
 ```
 
 ## Create two users to test
-We must create manually two users after keycloak start from Admin Portal UI. Access to Web Portal UI from:
+We must create manually two users accounts after keycloak start from Admin Portal UI. Access to Web Portal UI from:
 
 ```
 http://localhost:8080
@@ -25,14 +25,14 @@ http://localhost:8080
 
 with credentials: admin/password
 
-1. **Admin Credential**
+1. **Admin Account**
 - Credentials: admin/password
 - Email: admin@oferto.io
 - Firstname: Admin
 - Lastname: Actor
 - Role Admin
 
-2. **User Credential**:
+2. **User Account**:
 - Credentials: user/password
 - Email: user@oferto.io
 - Firstname: User
