@@ -66,7 +66,7 @@ Possible results:
 
 ## Notes
 
-I must start HAProxy as root inside the container if not errors lihe this appered in this version
+I must started HAProxy as root inside the container if not errors lihe this appered in this version
 
 ```
 [NOTICE]   (1) : haproxy version is 3.0.2-a45a8e6
