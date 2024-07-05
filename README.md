@@ -41,7 +41,7 @@ with credentials: admin/password
 
 ## Get a valid token
 
-Get a valid token from Admin Credentials:
+Get a valid token from Admin account:
 ```
 curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
