@@ -68,11 +68,12 @@ Possible results:
 
 - **Try mock request without any token**: Missing Authorization HTTP header
 - **Try mock request with expired token**: JWT has expired
+- **Try mock request with expired token not well formed**: Unsupported JWT signing algorithm
 - **Try mock request with a valid token**: Hello Mock
 
 ## Notes
 
-I had to start HAProxy as root inside the container if not, errors like this happend after 2.4 version.
+I had to start HAProxy as **root** inside the container if not, errors like this happend after 2.4 version related to the kernel used in the image:
 
 ```
 [NOTICE]   (1) : haproxy version is 3.0.2-a45a8e6
