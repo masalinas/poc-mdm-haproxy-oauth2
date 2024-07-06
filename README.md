@@ -68,6 +68,7 @@ Possible results:
 
 - **Try mock request without any token**: Missing Authorization HTTP header
 - **Try mock request with expired token**: JWT has expired
+- **Try mock request with expired token not well formed**: Unsupported JWT signing algorithm
 - **Try mock request with a valid token**: Hello Mock
 
 ## Notes
