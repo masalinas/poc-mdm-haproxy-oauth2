@@ -49,4 +49,3 @@ networks:
   consum:
     name: consum
     driver: bridge
-    external: true
