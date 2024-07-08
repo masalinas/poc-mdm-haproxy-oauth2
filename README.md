@@ -16,11 +16,6 @@ docker network create consum
 docker compose up -d --no-deps --build
 ```
 
-## Stop compose stack services
-```
-docker compose down
-```
-
 ## Create two users to test
 We must create manually two users accounts after keycloak start from Admin Portal UI. Access to Web Portal UI from:
 
@@ -75,3 +70,8 @@ Possible results:
 - **Try mock request with expired token**: JWT has expired
 - **Try mock request with expired token not well formed**: Unsupported JWT signing algorithm
 - **Try mock request with a valid token**: Hello Mock
+
+## Stop and remove stack from compose
+```
+docker compose down
+```
