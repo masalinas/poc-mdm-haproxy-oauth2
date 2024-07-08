@@ -6,6 +6,11 @@ PoC to autenticate a mock service using OAuth 2
 - **Springboot**: Mock Springboot service version 3.3.1
 - **Keycloak**: IAM service version 24.0.4
 
+## Create a network called consum for our stack
+```
+docker network create consum
+```
+
 ## Compile services and start compose stack
 ```
 docker compose up -d --no-deps --build
