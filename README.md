@@ -94,6 +94,13 @@ Possible results:
 - **Try mock request with expired token not well formed**: Unsupported JWT signing algorithm
 - **Try mock request with a valid token**: Hello Mock
 
+## Jahia Open API UI
+
+Open this link to access to Jahia Open API Web UI
+```
+http://localhost:8181/cxs/api-docs?url=openapi.json
+```
+
 ## Stop and remove stack services from compose
 
 ```
