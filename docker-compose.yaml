@@ -23,6 +23,10 @@ services:
       - DNS_TCP_PORT=53
     ports:
       - "80:8000"
+      - "81:8181"
+      - "82:8102"
+      - "83:9444"
+
     networks:
       - consum
     depends_on:
@@ -45,6 +49,31 @@ services:
     networks:
       - consum
 
+  consum-elasticsearch:
+    container_name: consum-elasticsearch
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    environment:
+      - discovery.type=single-node
+      - cluster.name=contextElasticSearch
+    ports: # Expose Elasticsearch ports
+      - "9200:9200"
+    networks:
+      - consum
+
+  consum-jcustomer:
+    container_name: consum-jcustomer
+    image: jahia/jcustomer:1.9.1
+    environment:
+      - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
+    ports:
+      - 8181:8181
+      - 9444:9443
+      - 8102:8102
+    depends_on:
+      - consum-elasticsearch
+    networks:
+      - consum
+      
 networks:
   consum:
     name: consum
