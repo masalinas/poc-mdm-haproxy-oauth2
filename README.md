@@ -100,6 +100,7 @@ Open this link to access to Jahia Open API Web UI
 ```
 http://localhost:8181/cxs/api-docs?url=openapi.json
 ```
+![Jahia Open API UI](./images/Jahia_open_api.png "Jahia Open API UI")
 
 ## Stop and remove stack services from compose
 
