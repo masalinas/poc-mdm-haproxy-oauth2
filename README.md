@@ -27,6 +27,8 @@ $ docker network create consum
 $ docker compose up -d --no-deps --build
 ```
 
+![Compose Stack](./images/compose_stack.png "Compose Stack")
+
 ## Create two users to test
 We must create manually two users accounts after keycloak start from Admin Portal UI. Access to Web Portal UI from:
 
