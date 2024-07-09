@@ -64,7 +64,7 @@ curl --location 'http://localhost' \
 --header "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
 ```
 
-If we access directly to the mock service we don't need any credentials
+We can access directly to the mock service without any token
 ```
 curl --location 'http://localhost:8088'
 ```
