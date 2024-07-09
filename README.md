@@ -5,20 +5,22 @@ PoC to autenticate a mock service using OAuth 2
 - **HAProxy**: Reverse proxy service version 3.0.2
 - **Springboot**: Mock Springboot service version 3.3.1
 - **Keycloak**: IAM service version 24.0.4
+- **Jahia (jcustomer)**: DMD service version 1.9.1
+- **Elasticsearch**: DMD Database service version 7.4.2
 
 ## Compile springboot mock service
 ```
-./mvnw clean install
+$ ./mvnw clean install
 ```
 
 ## Create a network called consum for our stack
 ```
-docker network create consum
+$ docker network create consum
 ```
 
 ## Compile services and start compose stack
 ```
-docker compose up -d --no-deps --build
+$ docker compose up -d --no-deps --build
 ```
 
 ## Create two users to test
@@ -48,7 +50,7 @@ with credentials: admin/password
 
 Get a valid token from Admin account:
 ```
-curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token' \
+$ curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data-urlencode 'grant_type=password' \
 --data-urlencode 'client_id=mock' \
@@ -56,17 +58,29 @@ curl --location 'http://localhost:8080/realms/mock/protocol/openid-connect/token
 --data-urlencode 'password=password'
 ```
 
-## Test authenticated mock service
+## Test Mock service
 
-Test mock service authenticated from HAProxy using the previous issued token 
+Test mock service authenticated from HAProxy using the previous issued token:
+
 ```
-curl --location 'http://localhost' \
---header "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+$ curl --location 'http://localhost' --header "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
 ```
 
 We can access directly to the mock service without any token
 ```
-curl --location 'http://localhost:8088'
+$ curl --location 'http://localhost:8088'
+
+Hello Mock
+```
+
+## Test Jahia service
+
+Test Jahia service authenticated from HAProxy using the previous issued token:
+
+```
+$ curl --location 'http://localhost:81/cxs/lists' --header "Authorization: Bearer <YOUR_ACCESS_TOKEN>"
+
+{"list":[],"offset":0,"pageSize":50,"totalSize":0,"totalSizeRelation":"EQUAL","scrollIdentifier":null,"scrollTimeValidity":null}
 ```
 
 Possible results:
@@ -76,7 +90,8 @@ Possible results:
 - **Try mock request with expired token not well formed**: Unsupported JWT signing algorithm
 - **Try mock request with a valid token**: Hello Mock
 
-## Stop and remove stack from compose
+## Stop and remove stack services from compose
+
 ```
-docker compose down
+$ docker compose down
 ```
