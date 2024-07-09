@@ -8,6 +8,10 @@ PoC to autenticate a mock service using OAuth 2
 - **Jahia (jcustomer)**: DMD service version 1.9.1
 - **Elasticsearch**: DMD Database service version 7.4.2
 
+## Architecture Diagram
+![Jahia Archicture](./images/diagram.png "Jahia Archicture")
+
+
 ## Compile springboot mock service
 ```
 $ ./mvnw clean install
