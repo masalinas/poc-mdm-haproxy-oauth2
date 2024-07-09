@@ -8,7 +8,7 @@ PoC to autenticate a mock service using OAuth 2
 
 ## Compile springboot mock service
 ```
-./mvnw clean install
+./mock/mvnw clean install
 ```
 
 ## Create a network called consum for our stack
