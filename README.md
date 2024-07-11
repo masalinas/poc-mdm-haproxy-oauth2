@@ -111,6 +111,36 @@ http://localhost:8181/cxs/api-docs?url=openapi.json
 http://localhost:1080/mockserver/dashboard
 ```
 
+## Para acceder event collector API
+
+```
+http://localhost:81/cxs/profiles/search
+```
+
+with body:
+
+```
+{
+    "offset": 0,
+    "sortby": null,
+    "forceRefresh": true,
+    "condition": {
+        "type": "codigoSocio",
+        "parameterValues": {
+            "string": "111111"
+        }
+    },
+    "limit": 5,
+    "text": null
+}
+```
+
+with Authentication header:
+
+```
+Authentication: Bear <ACCESS_TOKEN>
+```
+
 ## Stop and remove stack services from compose
 
 ```
