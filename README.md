@@ -111,7 +111,7 @@ http://localhost:8181/cxs/api-docs?url=openapi.json
 http://localhost:1080/mockserver/dashboard
 ```
 
-## Para acceder event collector API
+## Event Collection API Test:
 
 ```
 http://localhost:81/cxs/profiles/search
