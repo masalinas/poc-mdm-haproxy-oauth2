@@ -1,0 +1,37 @@
+apps:
+  - name: BROKER-PRE
+    postUrl: http://consum-mockserver:1080/mockserver/mdm/event/post
+    deleteUrl: http://consum-mockserver:1080/mockserver/mdm/event/delete
+    putUrl: http://consum-mockserver:1080/mockserver/mdm/event/put
+    needsIdentification: false
+    oauth2URL: noneed
+    clientId: noneed
+    clientSecret: noneed
+userIdentification:
+  - eventName: 'userInfo.idMdm'
+    profileName: 'userInfo.idMdm'
+    itsPrincipalId: true
+  - eventName: 'userInfo.codigoSocio'
+    profileName: 'userInfo.codigoSocio'
+    itsPrincipalId: false
+  - eventName: 'userInfo.idIam'
+    profileName: 'userInfo.idIam'
+    itsPrincipalId: false
+  - eventName: 'userInfo.infoPersonal.documentoPrincipal.numDocumento'
+    profileName: 'userInfo.infoPersonal.documentoPrincipal.numDocumento'
+    itsPrincipalId: false
+  - eventName: 'userInfo.infoPersonal.email'
+    profileName: 'userInfo.infoPersonal.email'
+    itsPrincipalId: false
+propagationProperties:
+  maxTryBeforeEmas: 3
+  maxTryWithEmas: 3
+  exponential: 2
+  minTime: 1000
+  waitTimeWithEmas: 1000
+loggingLevel: DEBUG
+historyAttrs:
+  - fechaModificacion
+  - idTransaccion
+  - aplicacionModificacion
+

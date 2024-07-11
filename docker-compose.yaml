@@ -51,7 +51,7 @@ services:
 
   consum-elasticsearch:
     container_name: consum-elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
     environment:
       - discovery.type=single-node
       - cluster.name=contextElasticSearch
@@ -65,6 +65,12 @@ services:
     image: jahia/jcustomer:1.9.1
     environment:
       - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
+    volumes:
+      - ./jcustomer/altaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/altaUsuarioBroker-2.0.4.jar
+      - ./jcustomer/bajaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/bajaUsuarioBroker-2.0.4.jar
+      - ./jcustomer/modificarUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/modificarUsuarioBroker-2.0.4.jar
+      - ./jcustomer/mdmBroker.yaml:/opt/jcustomer/etc/mdmBroker.yaml
+      - ./jcustomer/unomi.custom.system.properties:/opt/jcustomer/etc/unomi.custom.system.properties
     ports:
       - 8181:8181
       - 9444:9443
@@ -73,7 +79,17 @@ services:
       - consum-elasticsearch
     networks:
       - consum
-      
+
+  consum-mockserver:
+    container_name: consum-mockserver
+    image: mockserver/mockserver
+    environment:
+      - MOCKSERVER_SERVER_PORT=1080
+    ports:
+      - 1080:1080
+    networks:
+      - consum
+
 networks:
   consum:
     name: consum
