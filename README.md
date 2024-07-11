@@ -5,8 +5,8 @@ PoC to autenticate a mock service using OAuth 2
 - **HAProxy**: Reverse proxy service version 3.0.2
 - **Springboot**: Mock Springboot service version 3.3.1
 - **Keycloak**: IAM service version 24.0.4
-- **Jahia (jcustomer)**: DMD service version 1.9.1
-- **Elasticsearch**: DMD Database service version 7.16.3
+- **Jahia (jcustomer)**: MDM service version 1.9.1
+- **Elasticsearch**: MDM Database service version 7.16.3
 - **MockServer**: MockServer 5.15.0
 
 ## Architecture Diagram
