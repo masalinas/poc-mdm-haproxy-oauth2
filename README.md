@@ -7,6 +7,7 @@ PoC to autenticate a mock service using OAuth 2
 - **Keycloak**: IAM service version 24.0.4
 - **Jahia (jcustomer)**: DMD service version 1.9.1
 - **Elasticsearch**: DMD Database service version 7.16.3
+- **MockServer**: MockServer 5.15.0
 
 ## Architecture Diagram
 ![Jahia Archicture](./images/diagram.png "Jahia Archicture")
@@ -103,6 +104,10 @@ Open this link to access to Jahia Open API Web UI
 http://localhost:8181/cxs/api-docs?url=openapi.json
 ```
 ![Jahia Open API UI](./images/Jahia_open_api.png "Jahia Open API UI")
+
+## Para acceder al mock-server
+
+http://localhost:1080/mockserver/dashboard
 
 ## Stop and remove stack services from compose
 
