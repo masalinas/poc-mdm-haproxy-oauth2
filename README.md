@@ -114,7 +114,7 @@ http://localhost:1080/mockserver/dashboard
 ## Event Collection API Test:
 
 ```
-http://localhost:81/cxs/profiles/search
+POST http://localhost:81/cxs/profiles/search
 ```
 
 with body:
