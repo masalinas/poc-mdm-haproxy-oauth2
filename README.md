@@ -7,7 +7,7 @@ PoC to autenticate a mock service using OAuth 2
 - **Keycloak**: IAM service version 24.0.4
 - **Jahia (jcustomer)**: MDM service version 1.9.1
 - **Elasticsearch**: MDM Database service version 7.16.3
-- **MockServer**: MockServer 5.15.0
+- **MockServer**: MockServer service version 5.15.0
 
 ## Architecture Diagram
 ![Jahia Archicture](./images/diagram.png "Jahia Archicture")
