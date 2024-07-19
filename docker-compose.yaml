@@ -60,7 +60,7 @@ services:
     ports: # Expose Elasticsearch ports
       - "9200:9200"
     volumes:
-      - elastic_backup:/usr/share/elasticsearch/backup
+      - elastic_backup:/usr/share/elasticsearch/backup    
     networks:
       - consum
 
