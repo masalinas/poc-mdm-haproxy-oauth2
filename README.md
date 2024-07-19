@@ -7,6 +7,7 @@ PoC to autenticate a mock service using OAuth 2
 - **Keycloak**: IAM service version 24.0.4
 - **Jahia (jcustomer)**: MDM service version 1.9.1
 - **Elasticsearch**: MDM Database service version 7.16.3
+- **Elasticsearch Old**: MDM Database service version 7.4.2 (To check the snapshots exported)
 - **MockServer**: MockServer service version 5.15.0
 
 ## Architecture Diagram
@@ -146,3 +147,50 @@ Authentication: Bear <ACCESS_TOKEN>
 ```
 $ docker compose down
 ```
+
+## Snapshot for MDM Elastic
+
+- The MDM Elastic service is prepared to make snapshots using a volume to externalize this snapshots 
+and configuring ths service with the **path.repo** to this value **/usr/share/elasticsearch/backup**
+folder where sabe the snapshots
+
+## List MDM indices 
+
+We can list all MDM indices to be exported using snapshots
+```
+GET http://localhost:9200/_cat/indices?v=true&s=index
+```
+
+## List MDM indices 
+
+We can list all MDM indices to be exported using snapshots
+
+```
+GET http://localhost:9200/_cat/indices?v=true&s=index
+```
+
+## Create a snapshot repository
+
+Create a snapshot repository releative to the **path.repo** folder:
+
+We select the name **my-mdm_backup** for this snapshot repository localed inside the folder mdm_backup relative to the folder configured in **path.repo**:
+
+```
+PUT http://localhost:9201/_snapshot/my-mdm_backup
+{
+    "type": "fs",
+    "settings": {
+        "location": "mdm_backup"
+    }
+}
+```
+
+## Create a snapshot 
+
+Create a snapshot inside this repository called **my-mdm_backup**
+
+```
+PUT http://localhost:9200/_snapshot/my-mdm_backup/my_snapshot_20240719162000
+```
+
+Now we have some MDM Elastic snaphosts created inside a volume to be shared later with other Elastic service where import someone.
