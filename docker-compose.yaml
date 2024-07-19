@@ -61,7 +61,6 @@ services:
       - "9200:9200"
     volumes:
       - elastic_backup:/usr/share/elasticsearch/backup
-      #- ./elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml      
     networks:
       - consum
 
