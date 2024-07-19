@@ -51,12 +51,17 @@ services:
 
   consum-elasticsearch:
     container_name: consum-elasticsearch
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    #image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
     environment:
       - discovery.type=single-node
       - cluster.name=contextElasticSearch
+      - path.repo=/usr/share/elasticsearch/backup
     ports: # Expose Elasticsearch ports
       - "9200:9200"
+    volumes:
+      - elastic_backup:/usr/share/elasticsearch/backup
+      #- ./elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml      
     networks:
       - consum
 
@@ -89,6 +94,9 @@ services:
       - 1080:1080
     networks:
       - consum
+
+volumes:
+  elastic_backup:
 
 networks:
   consum:
