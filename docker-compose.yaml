@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   consum-mock:
     container_name: consum-mock
