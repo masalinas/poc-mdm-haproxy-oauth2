@@ -55,7 +55,7 @@ services:
       - discovery.type=single-node
       - cluster.name=contextElasticSearch
       - path.repo=/usr/share/elasticsearch/backup
-    ports: # Expose Elasticsearch ports
+    ports:
       - "9200:9200"
     volumes:
       - elastic_backup:/usr/share/elasticsearch/backup    
@@ -64,9 +64,11 @@ services:
 
   consum-jcustomer:
     container_name: consum-jcustomer
-    image: jahia/jcustomer:1.9.1
+    #image: jahia/jcustomer:1.9.1
+    image: jahia/jcustomer:2.5.0
     environment:
-      - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
+      #- UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
+      - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch-new:9200
     volumes:
       - ./jcustomer/altaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/altaUsuarioBroker-2.0.4.jar
       - ./jcustomer/bajaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/bajaUsuarioBroker-2.0.4.jar
