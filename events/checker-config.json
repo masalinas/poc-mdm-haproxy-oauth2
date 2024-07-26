@@ -1,0 +1,12 @@
+{
+  "source": {
+    "url": "http://localhost:8182",
+    "username": "karaf",
+    "password": "karaf"
+  },
+  "target": {
+    "url": "http://localhost:8181",
+    "username": "karaf",
+    "password": "karaf"
+  }
+}

@@ -48,7 +48,7 @@ services:
       - consum
 
   #consum-elasticsearch:
-  #  container_name: consum-elasticsearch
+  #  container_name: consum-elasticsearchf
   #  image: docker.elastic.co/elasticsearch/elasticsearch:7.16.3
     ##image: docker.elastic.co/elasticsearch/elasticsearch:7.4.2
   #  environment:
@@ -65,14 +65,35 @@ services:
   #  networks:
   #    - consum
 
-  consum-jcustomer:
-    container_name: consum-jcustomer
+  consum-jcustomer-1x:
+    container_name: consum-jcustomer-1x
+    image: jahia/jcustomer:1.9.1
+    #image: jahia/jcustomer:2.5.0
+    environment:
+      #- UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
+      - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch-1x:9200
+    volumes:
+      - ./jcustomer/altaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/altaUsuarioBroker-2.0.4.jar
+      - ./jcustomer/bajaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/bajaUsuarioBroker-2.0.4.jar
+      - ./jcustomer/modificarUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/modificarUsuarioBroker-2.0.4.jar
+      - ./jcustomer/mdmBroker.yaml:/opt/jcustomer/etc/mdmBroker.yaml
+      - ./jcustomer/unomi.custom.system.properties:/opt/jcustomer/etc/unomi.custom.system.properties
+    ports:
+      - 8182:8181
+      - 9445:9443
+      - 8103:8102
+    #depends_on:
+    #  - consum-elasticsearch
+    networks:
+      - consum
+
+  consum-jcustomer-2x:
+    container_name: consum-jcustomer-2x
     #image: jahia/jcustomer:1.9.1
-    #image: jahia/jcustomer:2.2.0
     image: jahia/jcustomer:2.5.0
     environment:
       #- UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
-      - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch-new:9200
+      - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch-2x:9200
     volumes:
       - ./jcustomer/altaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/altaUsuarioBroker-2.0.4.jar
       - ./jcustomer/bajaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/bajaUsuarioBroker-2.0.4.jar
