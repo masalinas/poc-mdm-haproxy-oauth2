@@ -225,6 +225,37 @@ The script will now EXIT, please create these scopes scopes and start again.
 Analyzing the events... !
 ```
 
+Repeat the validation with the new 
+
+```
+jcustomer-custom-event-checker validateEvents -f C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json -o C:\git\poc-mdm-haproxy-oauth2\events\errors.json --createScopes
+Looking for configuration in file C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json
+The following scopes are missing on the target instance: ["12345","SOCIAL-DEV","MCONSUM-TEST","SOCIAL-TEST","MCONSUM-PRE","SOCIAL-PRE","WEBCONSUM-PRE","IAM-PRE","WEBCONSUM-TEST","TOL-PRE","IAM-TEST","CRM-TEST","Prueba","TOL-TEST","MundoConsum","TOL-DEV","PRUEBA-DEV","PRUEBA","CRM-PRE","PRUEBA2-DEV","Prueba1"]
+Creating scope: 12345... done
+Creating scope: SOCIAL-DEV... done
+Creating scope: MCONSUM-TEST... done
+Creating scope: SOCIAL-TEST... done
+Creating scope: MCONSUM-PRE... done
+Creating scope: SOCIAL-PRE... done
+Creating scope: WEBCONSUM-PRE... done
+Creating scope: IAM-PRE... done
+Creating scope: WEBCONSUM-TEST... done
+Creating scope: TOL-PRE... done
+Creating scope: IAM-TEST... done
+Creating scope: CRM-TEST... done
+Creating scope: Prueba... done
+Creating scope: TOL-TEST... done
+Creating scope: MundoConsum... done
+Creating scope: TOL-DEV... done
+Creating scope: PRUEBA-DEV... done
+Creating scope: PRUEBA... done
+Creating scope: CRM-PRE... done
+Creating scope: PRUEBA2-DEV... done
+Creating scope: Prueba1... done
+Analyzing the events (events processed: 6000)... done
+Processed 6000 events in 165318 ms
+```
+
 ## Links
 
 - [jCustomer event checker in JCustomer 2.x](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker)
