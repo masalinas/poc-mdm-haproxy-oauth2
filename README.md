@@ -199,7 +199,7 @@ Create a snapshot inside this repository called **my-mdm_backup**
 PUT http://localhost:9200/_snapshot/my-mdm_backup/my_snapshot_20240719162000
 ```
 
-## Install validator events checker
+## Install JCustomer Events Checker Validator
 
 Execute this command to install the last node package JCustomer validator events checker
 
