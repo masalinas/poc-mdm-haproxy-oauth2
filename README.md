@@ -203,4 +203,4 @@ Now we have some MDM Elastic snaphosts created inside a volume to be shared late
 
 ## Links
 
-- [jCustomer event checker in JCustomer 2.x][(https://hub.docker.com/r/sonatype/nexus3/](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker))
+- [jCustomer event checker in JCustomer 2.x](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker)
