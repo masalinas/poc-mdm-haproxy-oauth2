@@ -215,6 +215,14 @@ Execute comparation between JCustomer 1.9.1 and JCustomer 7.16.3
 
 ```
 $ jcustomer-custom-event-checker validateEvents -f C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json -o C:\git\poc-mdm-haproxy-oauth2\events\errors.json
+Looking for configuration in file C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json
+The following scopes are missing on the target instance: ["12345","SOCIAL-DEV","MCONSUM-TEST","SOCIAL-TEST","MCONSUM-PRE","SOCIAL-PRE","WEBCONSUM-PRE","IAM-PRE","WEBCONSUM-TEST","TOL-PRE","IAM-TEST","CRM-TEST","Prueba","TOL-TEST","MundoConsum","TOL-DEV","PRUEBA-DEV","PRUEBA","CRM-PRE","PRUEBA2-DEV","Prueba1"]
+---
+You must create these scopes before proceeding any further with event checking
+See: https://unomi.apache.org/manual/latest/#_scopes_declarations_are_now_required
+You can use the --createScopes flag to create these scopes automatically.
+The script will now EXIT, please create these scopes scopes and start again.
+Analyzing the events... !
 ```
 
 ## Links
