@@ -256,6 +256,15 @@ Analyzing the events (events processed: 6000)... done
 Processed 6000 events in 165318 ms
 ```
 
+## Access ssh to JCustomer
+
+Connect to the instance of the JCustomer and execute inside this command:
+
+```
+ssh -p 8102 karaf@127.0.0.1
+```
+
+with the default password karaf
 ## Links
 
 - [jCustomer event checker in JCustomer 2.x](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker)
