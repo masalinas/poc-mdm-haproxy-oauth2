@@ -200,3 +200,7 @@ PUT http://localhost:9200/_snapshot/my-mdm_backup/my_snapshot_20240719162000
 ```
 
 Now we have some MDM Elastic snaphosts created inside a volume to be shared later with other Elastic service where import someone.
+
+## Links
+
+- [jCustomer event checker in JCustomer 2.x][(https://hub.docker.com/r/sonatype/nexus3/](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker))
