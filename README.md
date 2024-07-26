@@ -112,6 +112,12 @@ http://localhost:8181/cxs/api-docs?url=openapi.json
 http://localhost:1080/mockserver/dashboard
 ```
 
+## Event Cluster Status API Test:
+
+```
+GET http://localhost:81/cxs/cluster
+```
+
 ## Event Collection API Test:
 
 ```
