@@ -208,7 +208,13 @@ $ npm i -g @jahia/jcustomer-custom-event-checke
 ```
 
 ```
-jcustomer-custom-event-checker --help
+$ jcustomer-custom-event-checker --help
+```
+
+Execute comparation between JCustomer 1.9.1 and JCustomer 7.16.3
+
+```
+$ jcustomer-custom-event-checker validateEvents -f C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json -o C:\git\poc-mdm-haproxy-oauth2\events\errors.json
 ```
 
 ## Links
