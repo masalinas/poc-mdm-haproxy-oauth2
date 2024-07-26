@@ -199,7 +199,17 @@ Create a snapshot inside this repository called **my-mdm_backup**
 PUT http://localhost:9200/_snapshot/my-mdm_backup/my_snapshot_20240719162000
 ```
 
-Now we have some MDM Elastic snaphosts created inside a volume to be shared later with other Elastic service where import someone.
+## Install validator events checker
+
+Execute this command to install the last node package JCustomer validator events checker
+
+```
+$ npm i -g @jahia/jcustomer-custom-event-checke
+```
+
+```
+jcustomer-custom-event-checker --help
+```
 
 ## Links
 
