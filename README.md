@@ -265,6 +265,13 @@ ssh -p 8102 karaf@127.0.0.1
 ```
 
 with the default password karaf
+
+Set debug mode for more details in the logs, inside the ssh connection execute this command:
+
+```
+log:set DEBUG
+```
+
 ## Links
 
 - [jCustomer event checker in JCustomer 2.x](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker)
