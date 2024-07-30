@@ -272,6 +272,60 @@ Set debug mode for more details in the logs, inside the ssh connection execute t
 log:set DEBUG
 ```
 
+## json-schemas management
+
+We have some endpoints in Unomi to manage and register the json-schemas:
+
+To list json-schema registered
+```
+curl -X GET "http://localhost:8181/cxs/jsonSchema" -H "accept: application/json"
+```
+
+To register a new json-schema
+
+```
+curl -X POST "http://localhost:8181/cxs/jsonSchema" -H "accept: application/json" -H "Content-Type: application/json" -d "
+{
+    "$id": "https://consum.es/schemas/json/events/recuperarUsuario/1-0-0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "self": {
+        "vendor": "es.consum",
+        "target": "events",
+        "name": "recuperarUsuario",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },      
+    "title": "RecuperarUsuarioEvent",     
+    "type": "object",
+    "properties": {
+      "idMdm": {
+        "type": "string"
+      },
+      "fechaModificacion": {
+        "type": "string"
+      },
+      "aplicacionModificacion": {
+        "type": "string"
+      },
+      "idTransaccion": {
+        "type": "string"
+      }
+    }
+  }"
+```
+
+To delete a json-schema
+
+```
+curl -X POST "http://localhost:8181/cxs/jsonSchema/delete" -H "accept: application/json;charset=UTF-8" -H "Content-Type: */*" -d "https://cosum.es/schemas/json/events/poblarUsuario/1-0-0"
+```
+
+To validate a document
+
+```
+curl -X POST "http://localhost:8181/cxs/jsonSchema/validateEvent" -H "accept: application/json;charset=UTF-8" -H "Content-Type: text/plain" -d "{\"eventType\":\"altaUsuario\",\"scope\":\"Prueba\",\"properties\":{\"userInfo\":{\"personasEnHogar\":\"2\",\"codigoSocio\":\"123213123\",\"ordenUnidadFamiliar\":\"1\",\"tiendaCaptacion\":\"42\",\"unidadFamiliar\":\"1406280\",\"tarjetaPago\":\"N\",\"idioma\":\"E\",\"idMdm\":\"1a5ba9593ba4948b2c48062a6e331ae0a\",\"tiendaAsignacion\":\"42\",\"socioCanal\":[{\"restringido\":\"NO\",\"codigoCanal\":\"1\"},{\"restringido\":\"NO\",\"codigoCanal\":\"2\"},{\"restringido\":\"NO\",\"codigoCanal\":\"3\"},{\"restringido\":\"NO\",\"codigoCanal\":\"4\"},{\"restringido\":\"NO\",\"codigoCanal\":\"5\"}],\"infoPersonal\":{\"apellido2\":\"3213123\",\"fechaNacimiento\":\"26/11/1946\",\"apellido1\":\"PRUEBA\",\"direccion\":{\"puerta\":\"A\",\"patio\":\"8\",\"domicilio\":\"COMETA II\",\"codigoPostal\":\"3710\",\"tipoVia\":\"PTDA\",\"codigoCalle\":\"304754000\",\"poblacion\":\"CALPE/CALP\",\"provincia\":\"ALICANTE/ALACANT\"},\"documentoPrincipal\":{\"tipoDocumento\":\"NIF\",\"numDocumento\":\"ZZZ978\"},\"telefonoMovil\":\"679592986\",\"sexo\":\"H\",\"nombre\":\"SOPRA2\",\"telefonoFijo\":\"965837195\"},\"recibirRevista\":\"N\",\"numTarjetaFidelizacion\":\"2901406280011\"},\"fechaModificacion\":\"1610443398277\",\"idTransacion\":\"a5bf803c-98a1-41ac-a086-0ef5870b83c0da\",\"aplicacionModificacion\":\"PRUEBAXXX\"}}"
+```
+
 ## Links
 
 - [jCustomer event checker in JCustomer 2.x](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker)
