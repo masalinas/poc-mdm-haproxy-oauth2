@@ -1,0 +1,27 @@
+{
+    "$id": "https://consum.es/schemas/json/events/bajaUsuario/1-0-0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "self": {
+        "vendor": "es.consum",
+        "target": "events",
+        "name": "bajaUsuario",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },    
+    "title": "BajaUsuarioEvent",
+    "type": "object",              
+    "properties": {
+      "codigoSocio": {
+        "type": "string"
+      },
+      "fechaModificacion": {
+        "type": "string"
+      },
+      "aplicacionModificacion": {
+        "type": "string"
+      },
+      "idTransaccion": {
+        "type": "string"
+      }
+    }
+  }

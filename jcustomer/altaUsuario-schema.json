@@ -1,0 +1,174 @@
+{
+  "$id": "https://consum.es/schemas/json/events/altaUsuario/1-0-0",
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "self": {
+    "vendor": "es.consum",
+    "target": "events",
+    "name": "altaUsuario",
+    "format": "jsonschema",
+    "version": "1-0-0"
+  },
+  "title": "AltaUsuarioEvent",
+  "type": "object",
+  "properties": {
+    "personasEnHogar": {
+      "type": "string"
+    },
+    "codigoSocio": {
+      "type": "string"
+    },
+    "ordenUnidadFamiliar": {
+      "type": "string"
+    },
+    "tiendaCaptacion": {
+      "type": "string"
+    },
+    "unidadFamiliar": {
+      "type": "string"
+    },
+    "tarjetaPago": {
+      "type": "string"
+    },
+    "idioma": {
+      "type": "string"
+    },
+    "idMdm": {
+      "type": "string"
+    },
+    "tiendaAsignacion": {
+      "type": "string"
+    },
+    "socioCanal": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "restringido": {
+              "type": "string"
+            },
+            "codigoCanal": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "restringido": {
+              "type": "string"
+            },
+            "codigoCanal": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "restringido": {
+              "type": "string"
+            },
+            "codigoCanal": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "restringido": {
+              "type": "string"
+            },
+            "codigoCanal": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "properties": {
+            "restringido": {
+              "type": "string"
+            },
+            "codigoCanal": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "infoPersonal": {
+      "type": "object",
+      "properties": {
+        "apellido2": {
+          "type": "string"
+        },
+        "fechaNacimiento": {
+          "type": "string"
+        },
+        "apellido1": {
+          "type": "string"
+        },
+        "direccion": {
+          "type": "object",
+          "properties": {
+            "puerta": {
+              "type": "string"
+            },
+            "patio": {
+              "type": "string"
+            },
+            "domicilio": {
+              "type": "string"
+            },
+            "codigoPostal": {
+              "type": "string"
+            },
+            "tipoVia": {
+              "type": "string"
+            },
+            "codigoCalle": {
+              "type": "string"
+            },
+            "poblacion": {
+              "type": "string"
+            },
+            "provincia": {
+              "type": "string"
+            }
+          }
+        },
+        "documentoPrincipal": {
+          "type": "object",
+          "properties": {
+            "tipoDocumento": {
+              "type": "string"
+            },
+            "numDocumento": {
+              "type": "string"
+            }
+          }
+        },
+        "telefonoMovil": {
+          "type": "string"
+        },
+        "sexo": {
+          "type": "string"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "telefonoFijo": {
+          "type": "string"
+        }
+      }
+    },
+    "recibirRevista": {
+      "type": "string"
+    },
+    "numTarjetaFidelizacion": {
+      "type": "string"
+    }
+  }
+}

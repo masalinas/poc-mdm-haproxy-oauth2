@@ -1,0 +1,46 @@
+{
+    "$id": "https://consum.es/schemas/json/events/poblarUsuario/1-0-0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "self": {
+        "vendor": "es.consum",
+        "target": "events",
+        "name": "poblarUsuario",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },      
+    "title": "PoblarUsuarioEvent",    
+    "type": "object",
+    "properties": {
+      "infoPersonal": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string"
+          },
+          "apellido1": {
+            "type": "string"
+          },
+          "apellido2": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "documentoPrincipal": {
+            "type": "object",
+            "properties": {
+              "tipoDocumento": {
+                "type": "string"
+              },
+              "numDocumento": {
+                "type": "string"
+              },
+              "fechaCaducidad": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

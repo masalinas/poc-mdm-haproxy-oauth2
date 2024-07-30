@@ -1,0 +1,27 @@
+{
+    "$id": "https://consum.es/schemas/json/events/recuperarUsuario/1-0-0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "self": {
+        "vendor": "es.consum",
+        "target": "events",
+        "name": "recuperarUsuario",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },      
+    "title": "RecuperarUsuarioEvent",     
+    "type": "object",
+    "properties": {
+      "idMdm": {
+        "type": "string"
+      },
+      "fechaModificacion": {
+        "type": "string"
+      },
+      "aplicacionModificacion": {
+        "type": "string"
+      },
+      "idTransaccion": {
+        "type": "string"
+      }
+    }
+  }
