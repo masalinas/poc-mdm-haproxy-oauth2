@@ -215,6 +215,61 @@ Execute comparation between JCustomer 1.9.1 and JCustomer 7.16.3
 
 ```
 $ jcustomer-custom-event-checker validateEvents -f C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json -o C:\git\poc-mdm-haproxy-oauth2\events\errors.json
+Looking for configuration in file C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json
+The following scopes are missing on the target instance: ["12345","SOCIAL-DEV","MCONSUM-TEST","SOCIAL-TEST","MCONSUM-PRE","SOCIAL-PRE","WEBCONSUM-PRE","IAM-PRE","WEBCONSUM-TEST","TOL-PRE","IAM-TEST","CRM-TEST","Prueba","TOL-TEST","MundoConsum","TOL-DEV","PRUEBA-DEV","PRUEBA","CRM-PRE","PRUEBA2-DEV","Prueba1"]
+---
+You must create these scopes before proceeding any further with event checking
+See: https://unomi.apache.org/manual/latest/#_scopes_declarations_are_now_required
+You can use the --createScopes flag to create these scopes automatically.
+The script will now EXIT, please create these scopes scopes and start again.
+Analyzing the events... !
+```
+
+Repeat the validation with the new 
+
+```
+jcustomer-custom-event-checker validateEvents -f C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json -o C:\git\poc-mdm-haproxy-oauth2\events\errors.json --createScopes
+Looking for configuration in file C:\git\poc-mdm-haproxy-oauth2\events\checker-config.json
+The following scopes are missing on the target instance: ["12345","SOCIAL-DEV","MCONSUM-TEST","SOCIAL-TEST","MCONSUM-PRE","SOCIAL-PRE","WEBCONSUM-PRE","IAM-PRE","WEBCONSUM-TEST","TOL-PRE","IAM-TEST","CRM-TEST","Prueba","TOL-TEST","MundoConsum","TOL-DEV","PRUEBA-DEV","PRUEBA","CRM-PRE","PRUEBA2-DEV","Prueba1"]
+Creating scope: 12345... done
+Creating scope: SOCIAL-DEV... done
+Creating scope: MCONSUM-TEST... done
+Creating scope: SOCIAL-TEST... done
+Creating scope: MCONSUM-PRE... done
+Creating scope: SOCIAL-PRE... done
+Creating scope: WEBCONSUM-PRE... done
+Creating scope: IAM-PRE... done
+Creating scope: WEBCONSUM-TEST... done
+Creating scope: TOL-PRE... done
+Creating scope: IAM-TEST... done
+Creating scope: CRM-TEST... done
+Creating scope: Prueba... done
+Creating scope: TOL-TEST... done
+Creating scope: MundoConsum... done
+Creating scope: TOL-DEV... done
+Creating scope: PRUEBA-DEV... done
+Creating scope: PRUEBA... done
+Creating scope: CRM-PRE... done
+Creating scope: PRUEBA2-DEV... done
+Creating scope: Prueba1... done
+Analyzing the events (events processed: 6000)... done
+Processed 6000 events in 165318 ms
+```
+
+## Access ssh to JCustomer
+
+Connect to the instance of the JCustomer and execute inside this command:
+
+```
+ssh -p 8102 karaf@127.0.0.1
+```
+
+with the default password karaf
+
+Set debug mode for more details in the logs, inside the ssh connection execute this command:
+
+```
+log:set DEBUG
 ```
 
 ## Links
