@@ -95,9 +95,11 @@ services:
       #- UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch:9200
       - UNOMI_ELASTICSEARCH_ADDRESSES=consum-elasticsearch-2x:9200
     volumes:
-      - ./jcustomer/altaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/altaUsuarioBroker-2.0.4.jar
-      - ./jcustomer/bajaUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/bajaUsuarioBroker-2.0.4.jar
-      - ./jcustomer/modificarUsuarioBroker-2.0.4.jar:/opt/jcustomer/deploy/modificarUsuarioBroker-2.0.4.jar
+      - ./jcustomer/altaUsuarioBroker-2.0.5.jar:/opt/jcustomer/deploy/altaUsuarioBroker-2.0.5.jar      
+      - ./jcustomer/bajaUsuarioBroker-2.0.5.jar:/opt/jcustomer/deploy/bajaUsuarioBroker-2.0.5.jar
+      - ./jcustomer/modificarUsuarioBroker-2.0.5.jar:/opt/jcustomer/deploy/modificarUsuarioBroker-2.0.5.jar
+      - ./jcustomer/poblarUsuarioBroker-2.0.5.jar:/opt/jcustomer/deploy/poblarUsuarioBroker-2.0.5.jar
+      - ./jcustomer/recuperarUsuarioBroker-2.0.5.jar:/opt/jcustomer/deploy/recuperarUsuarioBroker-2.0.5.jar
       - ./jcustomer/mdmBroker.yaml:/opt/jcustomer/etc/mdmBroker.yaml
       - ./jcustomer/unomi.custom.system.properties:/opt/jcustomer/etc/unomi.custom.system.properties
     ports:
