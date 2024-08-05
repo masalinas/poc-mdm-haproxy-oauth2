@@ -160,21 +160,6 @@ $ docker compose down
 and configuring ths service with the **path.repo** to this value **/usr/share/elasticsearch/backup**
 folder where sabe the snapshots
 
-## List MDM indices 
-
-We can list all MDM indices to be exported using snapshots
-```
-GET http://localhost:9200/_cat/indices?v=true&s=index
-```
-
-## List MDM indices 
-
-We can list all MDM indices to be exported using snapshots
-
-```
-GET http://localhost:9200/_cat/indices?v=true&s=index
-```
-
 ## Create a snapshot repository
 
 Create a snapshot repository releative to the **path.repo** folder:
@@ -197,6 +182,14 @@ Create a snapshot inside this repository called **my-mdm_backup**
 
 ```
 PUT http://localhost:9200/_snapshot/my-mdm_backup/my_snapshot_20240719162000
+```
+
+## List snapshots
+
+We can list all elastic snaphots from repository. We will see the last one created **my_snapshot_20240719162000**
+
+```
+GET http://localhost:9202/_snapshot/my-mdm_backup/*?verbose=false
 ```
 
 ## Install JCustomer Events Checker Validator
