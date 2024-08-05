@@ -261,6 +261,11 @@ Processed 6000 events in 165318 ms
 Connect to the instance of the JCustomer and execute inside this command:
 
 ```
+apt-get update
+apt-get install openssh-client
+```
+
+```
 ssh -p 8102 karaf@127.0.0.1
 ```
 
