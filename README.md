@@ -156,30 +156,13 @@ $ docker compose down
 
 ## Snapshot for MDM Elastic
 
-- The MDM Elastic service is prepared to make snapshots using a volume to externalize this snapshots 
-and configuring ths service with the **path.repo** to this value **/usr/share/elasticsearch/backup**
-folder where sabe the snapshots
-
-## List MDM indices 
-
-We can list all MDM indices to be exported using snapshots
-```
-GET http://localhost:9200/_cat/indices?v=true&s=index
-```
-
-## List MDM indices 
-
-We can list all MDM indices to be exported using snapshots
-
-```
-GET http://localhost:9200/_cat/indices?v=true&s=index
-```
+The MDM Elastic service offer an API to manage snapshots. Also Elastic has a environment variable called **path.repo** from where any repository snapshot will we created relative to this value. We will use the default value **/usr/share/elasticsearch/backup** to define this repository inside elastic to save our respository snapshots and the snapshots create inside each one.
 
 ## Create a snapshot repository
 
-Create a snapshot repository releative to the **path.repo** folder:
+To create a snapshot repository releative to the **path.repo** folder we will use the API of Elastic for it.
 
-We select the name **my-mdm_backup** for this snapshot repository localed inside the folder mdm_backup relative to the folder configured in **path.repo**:
+We select the name **my-mdm_backup** for this snapshot repository localed in **mdm_backup** folder inside the folder defined in the environment variable **path.repo**:
 
 ```
 PUT http://localhost:9201/_snapshot/my-mdm_backup
@@ -191,12 +174,24 @@ PUT http://localhost:9201/_snapshot/my-mdm_backup
 }
 ```
 
+Finally afte execute this command we will se a folder in **/usr/share/elasticsearch/backup/mdm_backup** where we can save snapshots
+
 ## Create a snapshot 
 
-Create a snapshot inside this repository called **my-mdm_backup**
+Now we a snapshot reppository defined we can create a snapshot inside with this command where define the spapshot repository to use in our case **my-mdm_backup** and the name of the final snapshot for example **my_snapshot_20240719162000**
 
 ```
 PUT http://localhost:9200/_snapshot/my-mdm_backup/my_snapshot_20240719162000
+```
+
+Afte some seconds elastic will create some files that represent all indices and metadata exported inside this folder.
+
+## List snapshots
+
+We can list all snaphots from snapshot repository. Of course we will see the last one created **my_snapshot_20240719162000**
+
+```
+GET http://localhost:9202/_snapshot/my-mdm_backup/*?verbose=false
 ```
 
 ## Install JCustomer Events Checker Validator
@@ -259,6 +254,11 @@ Processed 6000 events in 165318 ms
 ## Access ssh to JCustomer
 
 Connect to the instance of the JCustomer and execute inside this command:
+
+```
+apt-get update
+apt-get install openssh-client
+```
 
 ```
 ssh -p 8102 karaf@127.0.0.1
