@@ -20,10 +20,12 @@ services:
       - DNS_TCP_ADDR=127.0.0.11
       - DNS_TCP_PORT=53
     ports:
-      - "80:8000"
       - "81:8181"
       - "82:8102"
       - "83:9444"
+      - "84:8182"
+      - "85:8103"
+      - "86:9445"
 
     networks:
       - consum
@@ -112,15 +114,15 @@ services:
     networks:
       - consum
 
-  consum-mockserver:
-    container_name: consum-mockserver
-    image: mockserver/mockserver
-    environment:
-      - MOCKSERVER_SERVER_PORT=1080
-    ports:
-      - 1080:1080
-    networks:
-      - consum
+  #consum-mockserver:
+  #  container_name: consum-mockserver
+  #  image: mockserver/mockserver
+  #  environment:
+  #    - MOCKSERVER_SERVER_PORT=1080
+  #  ports:
+  #    - 1080:1080
+  #  networks:
+  #    - consum
 
 volumes:
   elastic_backup:
