@@ -328,4 +328,5 @@ curl -X POST "http://localhost:8181/cxs/jsonSchema/validateEvent" -H "accept: ap
 
 ## Links
 
+- [Download Elastic 7.1.6.3](https://www.elastic.co/es/downloads/past-releases/elasticsearch-7-16-3)
 - [jCustomer event checker in JCustomer 2.x](https://academy.jahia.com/documentation/jexperience/jexperience-2.x-and-3.x/system-administrator/upgrading-jcustomer/jcustomer-event-checker)
